@@ -1,11 +1,15 @@
 name: Autograding Tests
-on:
-  push:
-jobs:
-  run-autograding-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run Quiz 1
-        run: bash quiz1.sh b
+on: push:
+  jobs:
+    run-autograding-tests:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Run Quiz 1
+          working-directory: ${{ github.workspace }}
+          run: bash quiz1.sh b
+        - name: List files (for debugging)
+          run: ls -l ${{ github.workspace }}
+        - name: Print working directory (for debugging)
+          run: pwd
