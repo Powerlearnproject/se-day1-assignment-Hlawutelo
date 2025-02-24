@@ -21,7 +21,10 @@ jobs:
         setup-command: ''
         command: Which of the following best describes software engineering?
         input: |-
+          a) The study of hardware components
           b) The process of designing, developing, and maintaining software
+          c) The analysis of networking protocols
+          d) The management of data storage systems
         expected-output: b) The process of designing, developing, and maintaining
           software
         comparison-method: exact
